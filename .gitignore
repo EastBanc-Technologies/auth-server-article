@@ -1,0 +1,9 @@
+.metadata/
+target/
+.settings/
+.DS_Store
+.classpath
+.project
+.idea
+*.iml
+Vagrantfile

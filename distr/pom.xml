@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.eastbanctech</groupId>
+        <artifactId>auth-server-main</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>distr</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Distribution</name>
+    <url>http://maven.apache.org</url>
+
+
+    <properties>
+        <tomcat.version>7.0.42</tomcat.version>
+        <opendj.version>2.6.0</opendj.version>
+        <openam.version>11.0.0</openam.version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat</artifactId>
+            <version>${tomcat.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.forgerock.openam</groupId>
+            <artifactId>openam-server</artifactId>
+            <version>${openam.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.forgerock.openam</groupId>
+            <artifactId>openam-distribution-ssoadmintools</artifactId>
+            <version>${openam.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.forgerock.openam</groupId>
+            <artifactId>openam-distribution-ssoconfiguratortools</artifactId>
+            <version>${openam.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.forgerock.opendj</groupId>
+            <artifactId>opendj-server</artifactId>
+            <version>${opendj.version}</version>
+            <type>zip</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-distr</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <finalName>auth-server</finalName>
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,13 @@
+dn: dc=eastbanctech,dc=com
+objectClass: domain
+objectClass: top
+dc: eastbanctech
+
+dn: ou=Users,dc=eastbanctech,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Users
+
+dn: ou=Roles,dc=eastbanctech,dc=com
+objectClass: organizationalUnit
+objectClass: top
