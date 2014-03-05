@@ -1,6 +1,3 @@
-##Introduction
-
-
 ###Intro
 
 In this article we would like to share our experience of [ForgeRock's Open Identity Stack][1] products customization and deployment automation. There are three main reasons to automate these things:
