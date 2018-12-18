@@ -3,7 +3,13 @@ label: Wow
 hide_body: false
 is_partial: false
 fields:
+- type: list
+  default:
+  - sadasd
+  - sasd
+  - sadsad
 - type: text
   label: Label
   name: label
   description: Sweet
+  default: sadsad
